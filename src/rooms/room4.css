@@ -345,6 +345,319 @@
   border-color: var(--r4-accent);
 }
 
+.r4-theory {
+  background: var(--r4-panel);
+  border: 1px solid var(--r4-border);
+  border-left: 3px solid var(--r4-accent);
+  border-radius: 0.8rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.r4-theory h2 {
+  color: var(--r4-heading);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.r4-theory > p:last-child {
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+  max-width: 70ch;
+}
+
+.r4-game {
+  background: #09151b;
+  border: 1px solid var(--r4-border);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.r4-game__bar,
+.r4-game__footer {
+  align-items: center;
+  color: var(--r4-text);
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  gap: 1rem;
+  justify-content: space-between;
+  letter-spacing: 0.06em;
+  padding: 0.8rem 1rem;
+}
+
+.r4-game__bar {
+  border-bottom: 1px solid var(--r4-border);
+}
+
+.r4-game__controls {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.r4-game__canvas-wrap {
+  background: #09131a;
+  overflow: hidden;
+  position: relative;
+}
+
+.r4-game__canvas {
+  aspect-ratio: 8 / 5;
+  display: block;
+  height: auto;
+  outline: none;
+  width: 100%;
+}
+
+.r4-game__canvas:focus-visible {
+  box-shadow: inset 0 0 0 3px var(--r4-accent);
+}
+
+.r4-game__tooltip,
+.r4-game__message {
+  background: rgb(5 20 24 / 94%);
+  border: 1px solid var(--r4-accent);
+  border-radius: 0.5rem;
+  color: var(--r4-accent);
+  font-size: 0.8rem;
+  left: 50%;
+  max-width: calc(100% - 1.5rem);
+  padding: 0.55rem 0.8rem;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.r4-game__tooltip {
+  top: 0.8rem;
+}
+
+.r4-game__tooltip span {
+  display: block;
+  color: var(--r4-heading);
+}
+
+.r4-game__message {
+  bottom: 1rem;
+  color: #f2c573;
+}
+
+.r4-game__legend {
+  background: rgb(8 18 22 / 85%);
+  border: 1px solid var(--r4-border);
+  border-radius: 0.35rem;
+  bottom: 0.5rem;
+  color: var(--r4-text);
+  display: flex;
+  font-size: 0.65rem;
+  gap: 0.75rem;
+  padding: 0.35rem 0.5rem;
+  position: absolute;
+  right: 0.5rem;
+}
+
+.r4-game__legend span {
+  align-items: center;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.r4-game__legend i {
+  background: #38c8b7;
+  border-radius: 50%;
+  height: 0.45rem;
+  width: 0.45rem;
+}
+
+.r4-game__legend i.is-done {
+  background: #55f0b5;
+}
+
+.r4-game__footer {
+  border-top: 1px solid var(--r4-border);
+  font-size: 0.7rem;
+}
+
+.r4-game__progress {
+  color: var(--r4-accent);
+}
+
+.r4-modal-host:empty {
+  display: none;
+}
+
+.r4-modal-backdrop {
+  align-items: center;
+  background: rgb(2 8 11 / 78%);
+  display: grid;
+  inset: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  position: fixed;
+  z-index: 20;
+}
+
+.r4-modal {
+  animation: r4-arrive 180ms ease-out both;
+  background: linear-gradient(145deg, #142830, #0c171d 72%);
+  border: 1px solid color-mix(in srgb, var(--r4-accent) 45%, transparent);
+  border-radius: 0.85rem;
+  box-shadow: 0 24px 90px rgb(0 0 0 / 70%);
+  margin: auto;
+  max-height: min(90vh, 55rem);
+  max-width: 42rem;
+  overflow-y: auto;
+  outline: none;
+  padding: clamp(1rem, 4vw, 2rem);
+  width: 100%;
+}
+
+.r4-modal__header,
+.r4-modal__actions {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.r4-modal__header h2 {
+  color: var(--r4-heading);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  margin: 0;
+}
+
+.r4-modal__close,
+.r4-secondary-button,
+.r4-submit {
+  border-radius: 0.45rem;
+  cursor: pointer;
+  font: inherit;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.8rem;
+}
+
+.r4-modal__close,
+.r4-secondary-button {
+  background: #142a30;
+  border: 1px solid var(--r4-border);
+  color: var(--r4-heading);
+}
+
+.r4-modal__close {
+  font-size: 1.4rem;
+  min-width: 2.5rem;
+  padding: 0;
+}
+
+.r4-modal__form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.r4-editor {
+  background: var(--r4-code);
+  border: 1px solid var(--r4-border);
+  border-radius: 0.5rem;
+  color: var(--r4-heading);
+  display: block;
+  font: 0.85rem/1.6 var(--mono, ui-monospace, monospace);
+  min-height: 9rem;
+  padding: 0.8rem;
+  resize: vertical;
+  width: 100%;
+}
+
+.r4-modal__hints {
+  background: var(--r4-panel);
+  border: 1px solid var(--r4-border);
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 0.75rem;
+}
+
+.r4-modal__hints strong,
+.r4-modal__hints small {
+  display: block;
+}
+
+.r4-modal__hints small {
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+.r4-modal__hints ol {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.r4-hint-button {
+  align-self: start;
+  background: #142a30;
+  border: 1px solid var(--r4-border);
+  border-radius: 0.45rem;
+  color: var(--r4-heading);
+  cursor: pointer;
+  font: inherit;
+  min-height: 2.4rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.r4-hint-button:disabled,
+.r4-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.r4-modal__actions {
+  justify-content: flex-end;
+}
+
+.r4-submit {
+  background: var(--r4-accent);
+  border: 1px solid transparent;
+  color: #10211c;
+  font-weight: 800;
+}
+
+.r4-error-message,
+.r4-success {
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+
+.r4-error-message {
+  background: #321b20;
+  border: 1px solid #a55152;
+  color: #ffd1ca;
+}
+
+.r4-error-message code {
+  display: block;
+  margin-top: 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.r4-error-message p,
+.r4-success p {
+  margin: 0.45rem 0 0;
+}
+
+.r4-success {
+  background: #102c29;
+  border: 1px solid #328a71;
+  color: #bdfbe4;
+}
+
+.r4-modal button:focus-visible,
+.r4-editor:focus-visible {
+  outline: 3px solid var(--r4-accent);
+  outline-offset: 3px;
+}
+
 @keyframes r4-arrive {
   from {
     opacity: 0;
@@ -392,6 +705,29 @@
 
   .r4-comparison__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 42rem) {
+  .r4-game__bar,
+  .r4-game__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .r4-game__legend {
+    bottom: 0.35rem;
+    font-size: 0.55rem;
+    right: 0.35rem;
+  }
+
+  .r4-modal-backdrop {
+    align-items: end;
+    padding: 0.5rem;
+  }
+
+  .r4-modal {
+    max-height: 92vh;
   }
 }
 
