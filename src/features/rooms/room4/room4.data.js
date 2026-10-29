@@ -16,6 +16,26 @@ export const room4Data = {
   theme: 'Mongoose · referencias entre colecciones',
   story: 'Las órdenes muestran solo identificadores de clientes. Configurá la referencia y resolvé el documento relacionado.',
   theory: 'Una relación por referencia guarda un ObjectId en un path con ref al modelo relacionado. populate() reemplaza ese identificador por el documento vinculado al consultar.',
+  collections: [
+    {
+      id: 'orders',
+      name: 'Ordenes',
+      description: 'Cada orden conserva el ObjectId de su cliente.',
+      documents: [
+        { _id: 'ord-101', total: 128.5, cliente: 'cli-001' },
+        { _id: 'ord-102', total: 74, cliente: 'cli-002' },
+      ],
+    },
+    {
+      id: 'clients',
+      name: 'Clientes',
+      description: 'El modelo Cliente contiene los datos que queremos consultar.',
+      documents: [
+        { _id: 'cli-001', nombre: 'Ada Lovelace', email: 'ada@example.com' },
+        { _id: 'cli-002', nombre: 'Linus Torvalds', email: 'linus@example.com' },
+      ],
+    },
+  ],
   map: {
     terminals: [
       { id: 'terminal-1', label: 'Referencia ObjectId', x: 164, y: 170 },
